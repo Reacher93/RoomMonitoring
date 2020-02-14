@@ -1,0 +1,5 @@
+SQL Befehle:
+
+User erstellen:
+INSERT INTO User (user, pw)
+VALUES ('admin', 'admin');
