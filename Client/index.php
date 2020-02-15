@@ -10,14 +10,6 @@ $dbuser = 'mysqladmin';
 $dbpw = 'zbwzbw';
 
 
-/*Array initialisieren
-Node 1 (
-    array(ID, Datum, Zeit, Temp, Luftfeuchtigkeit, Druck, Schallpegel, Meter über Meer, Helligkeit)
-    array(ID, Datum, Zeit, Temp, Luftfeuchtigkeit, Druck, Schallpegel, Meter über Meer, Helligkeit)
-)
-
-*/
-
 $sensorData1 = array(
     array()
 );
@@ -31,12 +23,14 @@ try {
     echo "Connected successfully to DB";
 
 
-    $sqlOrder = $pdo->prepare("SELECT * FROM Node1");
+    $sqlOrder = $pdo->prepare("SELECT * FROM User");
     $sqlOrder->execute();
 
     $sensorData1 = $sqlOrder->fetchAll();
 
     print_r($sensorData1);
+
+
 } catch (PDOException $e) {
     echo "Connection to DB failed: " . $e->getMessage();
 }
